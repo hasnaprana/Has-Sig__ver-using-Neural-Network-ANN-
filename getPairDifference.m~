@@ -1,0 +1,22 @@
+function rslt = getPairDifference(algoResults)
+
+% get the differences between each element
+rslt = zeros(1,10); 
+cnt = 1;
+noOfImages = 5;
+
+for i= 1 : noOfImages
+    for j= 2 : noOfImages
+        if(j>i)
+            if(j-i > 0)     
+                rslt(1,cnt) = algoResults(j) - algoResults(i);
+                cnt = cnt +1;
+            else
+                rslt(1,cnt) = algoResults(i) - algoResults(j);
+                cnt = cnt +1;
+            end
+        end
+    end
+end
+
+%finally 
